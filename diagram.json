@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "author": "Afonso Eiras",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 65.16, "left": 197.48, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 321.26,
+      "left": 234.22,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 200.89,
+      "left": 619.27,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 192.65,
+      "left": 21.49,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 310.88,
+      "left": 617.96,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 256.69,
+      "left": 615.6,
+      "attrs": { "color": "blue" }
+    },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": 493.14, "left": 352.46, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:GND.2", "lcd1:GND", "black", [ "v21.75", "h-137.66", "v74.85" ] ],
+    [ "uno:5V", "lcd1:VCC", "red", [ "v59.4", "h-133.43", "v46.7" ] ],
+    [ "uno:A4", "lcd1:SDA", "violet", [ "v39.82", "h-236.94", "v75.78" ] ],
+    [ "uno:A5", "lcd1:SCL", "violet", [ "v44.88", "h-246.24", "v80.22" ] ],
+    [ "btn4:2.r", "uno:GND.2", "black", [ "h5.65", "v20.57", "h-108.15", "v-84.96", "h-215.48" ] ],
+    [ "btn2:2.r", "uno:GND.2", "black", [ "h16.86", "v53", "h261.63" ] ],
+    [
+      "btn1:2.r",
+      "uno:GND.2",
+      "black",
+      [ "h8.38", "v135.87", "h-119.72", "v-90.35", "h-207.95" ]
+    ],
+    [ "btn3:2.r", "uno:GND.2", "black", [ "h18.07", "v86.1", "h-133.27", "v-96.38", "h-200.42" ] ],
+    [ "uno:7", "btn2:1.l", "red", [ "v-14.86", "h-382.21", "v146.35" ] ],
+    [ "btn1:1.l", "uno:4", "green", [ "h-8.95", "v-167.39", "h-195.34" ] ],
+    [ "btn3:1.l", "uno:5", "blue", [ "h-12.06", "v-215.66", "h-198.06" ] ],
+    [ "btn4:1.l", "uno:6", "orange", [ "h-20.44", "v-262.32", "h-201.54" ] ],
+    [ "rtc1:GND", "uno:GND.2", "black", [ "h-168.93", "v-230.41", "h173.95" ] ],
+    [ "rtc1:5V", "uno:5V", "red", [ "h-179.83", "v-205.89", "h175.35" ] ],
+    [ "rtc1:SDA", "uno:A4", "purple", [ "h187.13", "v-238.1", "h-105.61" ] ],
+    [ "rtc1:SCL", "uno:A5", "purple", [ "h198.03", "v-253.05", "h-107.01" ] ]
+  ]
+}
